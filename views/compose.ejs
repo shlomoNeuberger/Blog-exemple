@@ -1,0 +1,24 @@
+<%- include("partials/header")%>
+
+    <h1>Compose</h1>
+    <div class="d-flex">
+        <form action="/compose" class="form-control form-inline" method="post">
+            <div class="form-floating mb-3">
+                <input autocomplete="off" type="text" class="form-control" id="floatingInput" placeholder="title"
+                    name="postTitle">
+                <label for="floatingInput">Title</label>
+            </div>
+
+            <div class="mb-3 form-floating">
+                <textarea class="form-control" name="postBody" height: 100px;" placeholder="Leave a comment here"
+                    id="floatingTextarea"></textarea>
+                <label for="floatingTextarea">Comments</label>
+                <div id="composeHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+
+            <button class="btn btn-primary my-2" type="submit">Compose</button>
+
+        </form>
+
+    </div>
+    <%- include("partials/footer")%>

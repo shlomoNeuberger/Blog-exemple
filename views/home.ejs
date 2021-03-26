@@ -1,0 +1,32 @@
+<%- include("partials/header")%>
+
+    <h1>Home</h1>
+    <div>
+        <%if (posts.length> 1){ %>
+            <% posts.forEach(post=> { %>
+                <h1>
+                    <%= post.title %>
+                </h1>
+                <p class="text-truncate">
+                    <%= post.body.substring(0,100)%>
+                </p>
+                <a href="/post/<%=post.title.replace(/\s/g, '-')%>">read more</a>
+                <hr>
+                <% }) %>
+                    <%}else{%>
+                        <h1>NO posts</h1>
+                        <%}%>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <%- include("partials/footer")%>
