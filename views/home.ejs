@@ -2,19 +2,23 @@
 
     <h1>Home</h1>
     <div>
-        <%if (posts.length> 1){ %>
+        <%if (posts.length>0){ %>
             <% posts.forEach(post=> { %>
                 <h1>
                     <%= post.title %>
                 </h1>
+                <h6 class="text-muted">
+                    <%=post.timestemp%>
+                </h6>
                 <p class="text-truncate">
                     <%= post.body.substring(0,100)%>
                 </p>
-                <a href="/post/<%=post.title.replace(/\s/g, '-')%>">read more</a>
+                <a href="/post/<%=post.slug.replace(/\s/g, '-')%>">read more</a>
                 <hr>
                 <% }) %>
                     <%}else{%>
-                        <h1>NO posts</h1>
+                        <h2>No posts</h2>
+                        <p><a href="/compose">New post</a></p>
                         <%}%>
 
 
@@ -23,6 +27,11 @@
 
 
 
+    <footer class="footer-padding d-flex justify-content-end  fixed-bottom">
+        <a href="/compose">
+            <div class="btn btn-success my-2 mx-2 btn-circle" type="submit">New post</div>
+        </a>
+    </footer>
 
 
 

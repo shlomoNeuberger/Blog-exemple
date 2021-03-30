@@ -1,19 +1,31 @@
 <%- include("partials/header")%>
-
-
-
     <h1>Contact</h1>
-    <div>
-        <p>
-            <%= post %>
-        </p>
-    </div>
+    <form class="form-control" method="POST" action="/contact">
+        <div class="form-floating mb-2">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+        </div>
+        <div class="row">
+            <div class=" col form-floating mb-2">
+                <input type="text" class="form-control" id="floatingInput" placeholder="John Doe">
+                <label class="mx-2" for="floatingInput">Full name</label>
+            </div>
+            <div class="col form-floating mb-2">
+                <input type="tel" class="form-control" id="floatingInput" placeholder="John Doe">
+                <label class="mx-2" for="floatingInput">Phone Number</label>
+            </div>
+        </div>
 
+        <div class="form-floating mb-2">
+            <textarea class="form-control" name="massage" id="message" placeholder="Insert your massage here"
+                style="height: 100px;"></textarea>
+            <label for="message">Message</label>
+        </div>
 
-
-
-
-
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-md btn-primary form-contorl">Submit</button>
+        </div>
+    </form>
 
 
     <%- include("partials/footer")%>
